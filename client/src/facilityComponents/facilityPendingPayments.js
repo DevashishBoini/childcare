@@ -10,7 +10,7 @@ const FacilityPendingPayments = () => {
     
     const { facId,licNo,facName,week,year } = useParams();
 
-    const url=`http://localhost:8080/facId/${facId}/${licNo}/pendingPayments/${week}/${year}`;
+    const url=`/facId/${facId}/${licNo}/pendingPayments/${week}/${year}`;
 
     
     

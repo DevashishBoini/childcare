@@ -10,7 +10,7 @@ const FacilityDailyAbsence = () => {
 
   const { facId,licNo,facName,day,week,year,classtype } = useParams();
 
-  const url=`http://localhost:8080/facId/${facId}/${licNo}/dailyAbsence/${day}/${week}/${year}/${classtype}`;
+  const url=`/facId/${facId}/${licNo}/dailyAbsence/${day}/${week}/${year}/${classtype}`;
     
 
 

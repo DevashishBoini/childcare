@@ -10,7 +10,7 @@ const FacilityMoneyBilled = () => {
 
   const { facId,licNo,facName,week,year} = useParams();
 
-  const url=`http://localhost:8080/facId/${facId}/${licNo}/moneyBilled/${week}/${year}`;
+  const url=`/facId/${facId}/${licNo}/moneyBilled/${week}/${year}`;
     
 
   useEffect(() => {

@@ -15,7 +15,7 @@ const TeacherHome = () => {
 
   const { teacherId } = useParams();
 
-  const url=`http://localhost:8080/teacherId/${teacherId}`;
+  const url=`/teacherId/${teacherId}`;
 
   const week=Cookies.get('week');
   const day=Cookies.get('day');

@@ -6,7 +6,7 @@ const FacilityChildrenEnrollments = () => {
     const [isPending, setisPending] = useState(true);
     const [error, setError] = useState(null);
     const { facId, licNo, facName } = useParams();
-    const url = `http://localhost:8080/facId/${facId}/${licNo}/studentList`;
+    const url = `/facId/${facId}/${licNo}/studentList`;
 
     const handleDelete = (id) => {
         // Indicate loading or process start

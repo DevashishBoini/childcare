@@ -15,7 +15,7 @@ const ParentChildWeekAttendance = () => {
     const day=Cookies.get('day');
     const year=Cookies.get('year');
 
-    const url=`http://localhost:8080/parentId/${parentId}/childId/${childId}/weekAttendance/${attainweek}/${attainyear}`;
+    const url=`/parentId/${parentId}/childId/${childId}/weekAttendance/${attainweek}/${attainyear}`;
     
     useEffect(() => {
     

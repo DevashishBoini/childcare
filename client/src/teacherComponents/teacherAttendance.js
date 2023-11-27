@@ -17,7 +17,7 @@ const TeacherAttendance = () => {
     const day=Cookies.get('day');
     const year=Cookies.get('year');
 
-    const url=`http://localhost:8080/teacherId/${teacherId}/teacherAttendance/${weekNo}/${yearNo}`;
+    const url=`/teacherId/${teacherId}/teacherAttendance/${weekNo}/${yearNo}`;
     
     useEffect(() => {
     

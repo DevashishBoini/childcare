@@ -10,7 +10,7 @@ const Login = () => {
   const [isPending, setisPending] = useState(false);
   const [error, setError] = useState(null);
   const history = useHistory();
-  const url = 'http://localhost:8080/login';
+  const url = '/login';
 
   
     const handleSubmit = (e) => {

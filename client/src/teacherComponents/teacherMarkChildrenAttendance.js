@@ -15,7 +15,7 @@ const TeacherMarkChildrenAttendance = () => {
     const day=Cookies.get('day');
     const year=Cookies.get('year');
 
-    const url=`http://localhost:8080/teacherId/${teacherId}/markChildrenAttendance/${day}/${week}/${year}`;
+    const url=`/teacherId/${teacherId}/markChildrenAttendance/${day}/${week}/${year}`;
     
     const handleToggle = (studentId) => {
         const Toggle = { studentId };

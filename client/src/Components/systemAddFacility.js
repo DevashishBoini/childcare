@@ -22,7 +22,7 @@ const SystemAddFacility = () => {
 
     const history = useHistory();
     
-    const url=`http://localhost:8080/sysId/${sysId}/addFacility`;
+    const url=`/sysId/${sysId}/addFacility`;
 
     const handleSubmit = (e) => {
         e.preventDefault();

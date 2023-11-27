@@ -18,7 +18,7 @@ const FacilityAddChild = () => {
 
     const history = useHistory();
 
-    const url=`http://localhost:8080/facId/${facId}/${licNo}/teacherAttendance`;
+    const url=`/facId/${facId}/${licNo}/teacherAttendance`;
 
     
   

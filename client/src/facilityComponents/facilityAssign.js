@@ -13,7 +13,7 @@ const FacilityAssign = () => {
 
     const history = useHistory();
 
-    const url=`http://localhost:8080/facId/${facId}/${teacherId}/assignClass`;
+    const url=`/facId/${facId}/${teacherId}/assignClass`;
     
 
     const dropdownOptions = [

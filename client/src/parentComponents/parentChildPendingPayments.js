@@ -12,7 +12,7 @@ const ParentChildPendingPayments = () => {
     
     const { parentId,childId,firstName,lastName } = useParams();
 
-    const url=`http://localhost:8080/parentId/${parentId}/childId/${childId}/pendingPayments`;
+    const url=`/parentId/${parentId}/childId/${childId}/pendingPayments`;
 
     useEffect(() => {
     

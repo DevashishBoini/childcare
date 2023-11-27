@@ -11,7 +11,7 @@ const ParentHome = () => {
     
     const { parentId } = useParams();    
 
-    const url=`http://localhost:8080/parentId/${parentId}/childrenList`;
+    const url=`/parentId/${parentId}/childrenList`;
 
     
     useEffect(() => {

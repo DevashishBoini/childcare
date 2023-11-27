@@ -10,7 +10,7 @@ const FacilityMoneyEarned = () => {
 
   const { facId,licNo,facName,week,year} = useParams();
 
-  const url=`http://localhost:8080/facId/${facId}/${licNo}/moneyEarned/${week}/${year}`;
+  const url=`/facId/${facId}/${licNo}/moneyEarned/${week}/${year}`;
     
 
   useEffect(() => {

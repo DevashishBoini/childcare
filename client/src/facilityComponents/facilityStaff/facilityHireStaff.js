@@ -10,7 +10,7 @@ const FacilityHireStaff = () => {
 
   const { facId,licNo,facName } = useParams();
     
-  const url=`http://localhost:8080/facId/${facId}/${licNo}/staffList`;  
+  const url=`/facId/${facId}/${licNo}/staffList`;  
 
   
   const handleDelete = (id) => {

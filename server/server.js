@@ -1,6 +1,7 @@
 const pool = require('./database.js')
 const express = require('express')
 const cors = require('cors')
+const path = require("path");
 
 const app=express()
 app.use(express.json())
@@ -68,6 +69,8 @@ app.get('/login/:role/:id', async (req, res) => {
   
   const role=req.params.role
   const id=req.params.id
+
+  console.log("fgs");
 
   await pool.connect().then(async (client) => {
     try {
@@ -295,7 +298,6 @@ app.get('/facId/:facId/:licNo/studentList', async (req, res) => {
       console.log(result.rows[0].first_name)
       res.json(result.rows)
     } catch (err_1) {
-      client.release()
       console.log(err_1.stack)
     }
   })
@@ -668,7 +670,21 @@ app.get('/parentId/:parentId/childId/:childId/pendingPayments', async (req, res)
   })
 });
 
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../client/build");
 
+app.use(express.static(buildPath));
+
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../client/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 
 
 

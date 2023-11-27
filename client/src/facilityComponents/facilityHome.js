@@ -28,7 +28,7 @@ const FacilityHome = () => {
   
   const { facId } = useParams();
   
-  const url=`http://localhost:8080/facId/${facId}`;
+  const url=`/facId/${facId}`;
 
   
   const dropdownOptions = [

@@ -10,7 +10,7 @@ const SystemHome = () => {
 
   const { sysId } = useParams();
 
-  const url=`http://localhost:8080/sysId/${sysId}/facilityList`;
+  const url=`/sysId/${sysId}/facilityList`;
     
 
 

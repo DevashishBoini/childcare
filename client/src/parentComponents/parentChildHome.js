@@ -18,11 +18,11 @@ const ParentChildHome = () => {
 
   const { parentId,childId,firstName,lastName } = useParams();
 
-  const url1=`http://localhost:8080/parentId/${parentId}/childId/${childId}/viewWeeklyAttendance`;
+  const url1=`/parentId/${parentId}/childId/${childId}/viewWeeklyAttendance`;
 
-  const url2=`http://localhost:8080/parentId/${parentId}/childId/${childId}/updateAllergy`;
+  const url2=`/parentId/${parentId}/childId/${childId}/updateAllergy`;
 
-  const url3=`http://localhost:8080/parentId/${parentId}/childId/${childId}/dropChild`;
+  const url3=`/parentId/${parentId}/childId/${childId}/dropChild`;
 
   const week=Cookies.get('week');
   const day=Cookies.get('day');
