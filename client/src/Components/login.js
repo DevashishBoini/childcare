@@ -57,6 +57,7 @@ const Login = () => {
           }
           else {
             alert('Incorrect Credentials, Please Retry');
+            window.location.reload();
           }
           
 
@@ -83,11 +84,12 @@ const Login = () => {
   
 
   return (
-    <div >
+    <div class = "content-w3ls">
       <div >
         <div ></div>
-        <div >LOGIN</div>
-        <form onSubmit={(e) => handleSubmit(e)} >
+        <div class = "text-center">LOGIN</div>
+        <div class = "content-bottom">
+        <form onSubmit={(e) => handleSubmit(e)} className="login">
           <div >
             <select
               value={role}
@@ -123,8 +125,9 @@ const Login = () => {
           </div>
           {!isPending && <button className="submit-button">Submit</button>}
           {error && <div>{error}</div>}
-          {isPending && <button disabled>Submitting</button>}
+          {isPending && <button disabled className="submit-button">Submitting...</button>}
         </form>
+        </div>
       </div>
     </div>
   );

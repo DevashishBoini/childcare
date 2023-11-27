@@ -68,7 +68,7 @@ const ParentHome = () => {
              <h2>Parent Id: {parentId}</h2>
              <h2>Children List</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
                        <th>Student Id</th>
@@ -85,7 +85,7 @@ const ParentHome = () => {
                          <td>{rec.last_name_op}</td>
                          <td>
                           <Link to={`/parentHome/parentId/${parentId}/viewChild/${rec.student_id_op}/${rec.first_name_op}/${rec.last_name_op}`}>
-                          <button>View</button>
+                          <button className="big-button">View</button>
                           </Link>
                          </td>
                        </tr>

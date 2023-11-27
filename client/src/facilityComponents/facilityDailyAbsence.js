@@ -72,7 +72,7 @@ const FacilityDailyAbsence = () => {
               <h2>ClassType:{classtype}</h2>
               <h3>Day: {day} Week: {week} Year: {year}</h3>
                 <div>
-                   <table>
+                   <table className="student-table">
                     <thead>
                     <tr>
                         <th>Student Id</th>
@@ -82,8 +82,8 @@ const FacilityDailyAbsence = () => {
                     </thead>
                       {info.map((rec) => (
                      <tbody>
-                        <tr key={rec.id}>
-                          <td>{rec.id}</td>
+                        <tr key={rec.student_id_op}>
+                          <td>{rec.student_id_op}</td>
                           <td>{rec.first_name}</td>
                           <td>{rec.last_name}</td>
                         </tr>

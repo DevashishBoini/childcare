@@ -29,15 +29,13 @@ app.post('/sysId/:sysId/addFacility', async (req, res) => {
   
   const sysId=req.params.sysId
 
-  const {name,address,contact,licenseNo}=req.body
+  const {namei,addressi,contacti,lici,gmail,namee,contact,pass}=req.body
 
-  console.log(name)
 
   await pool.connect().then(async (client) => {
     try {
       await client
-      .query("select * from add_facility($1,$2,$3,$4)",[name,address,contact,licenseNo])
-      console.log(name)
+      .query("select * from add_facility($1,$2,$3,$4,$5,$6,$7,$8)",[namei,addressi,contacti,lici,gmail,namee,contact,pass])
       res.status(201).send("done");
     } catch (err_1) {
       client.release()
@@ -137,7 +135,6 @@ app.get('/facId/:facId/:licNo/dailyAbsence/:day/:week/:year/:classtype', async (
   const year=req.params.year
   const classtype=req.params.classtype
 
-  console.log(day)
 
   await pool.connect().then(async (client) => {
     try {
@@ -197,86 +194,8 @@ app.get('/facId/:facId/:licNo/moneyBilled/:week/:year', async (req, res) => {
   })
 });
 
-// app.post('/facId/:facId/:teacherId/assignClass', async (req, res) => {
-  
-//   const {teacherId,classtype,licNo}=req.body
 
-//   await pool.connect().then(async (client) => {
-//     try {
-//       const result = await client
-//         .query("select assign_teacher($1,$2,$3) ;",[teacherId,classtype,licNo])
-//       client.release()
-//       console.log(result.rows)
-//       res.json(result.rows)
-//     } catch (err_1) {
-//       client.release()
-//       console.log(err_1.stack)
-//     }
-//   })
-// });
-
-
-
-
-// app.get('/facId/:facId/:licNo/:classtype/checkAvail', async (req, res) => {
-  
-//   const facId=req.params.facId
-//   const licNo=req.params.licNo
-//   const classtype=req.params.classtype
-
-//   await pool.connect().then(async (client) => {
-//     try {
-//       const result = await client
-//         .query("select count(*) as count from student where student.license_no=($1) and student.classtype=($2);",[licNo,classtype])
-//       client.release()
-      
-//       let count=result.rows[0].count
-
-//       const k = await client
-//         .query("select count(*) as count from student where student.license_no=($1) and student.classtype=($2);",[licNo,classtype])
-//       client.release()
-
-      
-      
-//       console.log(result.rows[0].count)
-//       res.json(result.rows)
-//     } catch (err_1) {
-//       client.release()
-//       console.log(err_1.stack)
-//     }
-//   })
-// });
-
-// app.get('/facId/:facId/:licNo/:classtype/checkCap', async (req, res) => {
-  
-//   const facId=req.params.facId
-//   const licNo=req.params.licNo
-//   const classtype=req.params.classtype
-
-//   await pool.connect().then(async (client) => {
-//     try {
-//       const result = await client
-//         .query("select count(*) as count from student where student.license_no=($1) and student.classtype=($2);",[licNo,classtype])
-//       client.release()
-      
-//       let count=result.rows[0].count
-
-//       const k = await client
-//         .query("select classroom_type.max_students as max from classrooom_type where classrooom_type.id=($1) ;",[classtype])
-//       client.release()
-
-//       let bool=false;
-
-//       console.log(k.rows)
-      
-//       console.log(result.rows[0].count)
-//       res.json(result.rows)
-//     } catch (err_1) {
-//       client.release()
-//       console.log(err_1.stack)
-//     }
-//   })
-// });
+    
 
 app.get('/facId/:facId/studentId/:studId', async (req, res) => {
   
@@ -325,18 +244,18 @@ app.post('/facId/:facId/:licNo/pendingPayments/:week/:year/makePayment', async (
   const week=req.params.week
   const year=req.params.year
 
-  console.log(week)
+  console.log(studId)
 
   await pool.connect().then(async (client) => {
     try {
       const result=await client
       .query("select * from change_payment_status($1,$2,$3)",[studId,week,year])
       console.log(result.rows[0])
+      console.log("dsf")
       res.status(201).send("done");
     } catch (err_1) {
       client.release()
       console.log(err_1.stack)
-      console.log("dsf")
     }
   })  
     
@@ -407,7 +326,7 @@ app.post('/facId/:facId/:licNo/:classtype/addChild', async (req, res) => {
   })
 });
 
-app.delete('/facId/:facId/studentList/delete/:id', async (req, res) => {
+app.delete('/facId/:facId/:licNo/studentList/delete/:id', async (req, res) => {
 
   const facId=req.params.facId
   const id=req.params.id
@@ -415,7 +334,8 @@ app.delete('/facId/:facId/studentList/delete/:id', async (req, res) => {
   await pool.connect().then(async (client) => {
     try {
       await client
-      .query("DELETE FROM student WHERE student.license_no=($1) and student.id=($2)",[facId,id])
+      .query("select * from delete_student($1)",[id])
+      console.log("sdf");
       res.status(204).send("deleted");
     } catch (err_1) {
       client.release()
@@ -433,7 +353,7 @@ app.get('/facId/:facId/:licNo/staffList', async (req, res) => {
   await pool.connect().then(async (client) => {
     try {
       const result = await client
-        .query("select teacher.first_name,teacher.last_name,teacher.id  from teacher where teacher.license_no = ($1) ;",[licNo])
+        .query("select * from find_staff($1) ;",[licNo])
       client.release()
       console.log(result.rows[0].first_name)
       res.json(result.rows)
@@ -499,7 +419,7 @@ app.post('/facId/:facId/:teacherId/assignClass', async (req, res) => {
   })
 });
 
-app.delete('/facId/:facId/StaffList/delete/:id', async (req, res) => {
+app.delete('/facId/:facId/:licNo/staffList/delete/:id', async (req, res) => {
 
   const facId=req.params.facId
   const id=req.params.id
@@ -507,7 +427,7 @@ app.delete('/facId/:facId/StaffList/delete/:id', async (req, res) => {
   await pool.connect().then(async (client) => {
     try {
       await client
-      .query("DELETE FROM teacher WHERE teacher.license_no=($1) and teacher.id=($2)",[facId,id])
+      .query("select * from delete_teacher($1)",[id])
       res.status(204).send("deleted");
     } catch (err_1) {
       client.release()
@@ -518,44 +438,7 @@ app.delete('/facId/:facId/StaffList/delete/:id', async (req, res) => {
 
 });
 
-// app.post('/facId/:facId/:licNo/teacherAttendance', async (req, res) => {
-  
-//   try{
-  
-//   const licNo=req.params.licNo
 
-//   const {teacherId,time,week,day}=req.body
-
-//   let query = "SELECT NOW() as time;"
-//   const [val] = await pool.promise().query(query);
-//   const curr_time=val[0].time
-//   const present=1
-//   const type="teacher"
-
-//   if(time===1)
-//   {
-
-//     await pool.connect().then(async (client) => {
-    
-//     await client.query("insert into attendance(day,week,in_time,present,user_type,id) values(($1),($2),($3),($4),($5),($6))",[day,week,curr_time,present,type,teacherId])
-//     res.status(201).json("done");
-//   } 
-//    )}
-
-//    else{
-//     await pool.connect().then(async (client) => {
-      
-//       await client.query("SELECT update_outtime(($1),($2),($3))",[curr_time,type,teacherId])
-//       res.status(201).json("done");
-    
-//      }) 
-//    }
-
-//   }catch (err_1) {
-//     client.release()
-//     console.log(err_1.stack)
-//   }
-// });
 
 app.post('/facId/:facId/:licNo/teacherAttendance', async (req, res) => {
   
@@ -642,12 +525,11 @@ app.get('/teacherId/:teacherId/teacherAttendance/:weekNo/:yearNo/totalSalary', a
   const weekNo=req.params.weekNo
   const yearNo=req.params.yearNo
 
-  console.log("sfd")
 
   await pool.connect().then(async (client) => {
     try {
       const result = await client
-        .query("select * from cal_money_per_week($1,$2,$3) as A;",[teacherId,weekNo,yearNo])
+        .query("select * from cal_money_per_week($1,$2,$3) as a;",[teacherId,weekNo,yearNo])
       client.release()
       console.log(result.rows[0].a)
       res.json(result.rows[0].a)

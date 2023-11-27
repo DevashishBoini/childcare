@@ -69,7 +69,7 @@ const SystemHome = () => {
               <h2>All Facilities</h2>
               <h2>System Id: {sysId}</h2>
                 <div>
-                   <table>
+                   <table className="student-table">
                     <thead>
                     <tr>
                         <th>Facility Id</th>
@@ -88,7 +88,9 @@ const SystemHome = () => {
                           <td>{rec.admin_name}</td>
                           <td>
                             <Link to={`/facilityHome/facId/${rec.id}`}>
-                            <button>View</button>
+                            <button
+                            className="big-button"
+                            >View</button>
                             </Link>
                           </td>
                         </tr>

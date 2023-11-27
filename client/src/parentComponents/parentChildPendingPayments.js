@@ -69,17 +69,18 @@ const ParentChildPendingPayments = () => {
              <h2>Pending Payments</h2>
              <h2>{firstName} {lastName}</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
+                       <th>Year</th>
                        <th>Week</th>
-                       <th>Pending payment</th>
+                       <th>Due Payment</th>
                     </tr>
                    </thead>
                      {info.map((rec) => (
                     <tbody>
-                       <tr key={rec.id}>
-                         <td>{rec.id}</td>
+                       <tr key={rec.year_op}>
+                         <td>{rec.year_op}</td>
                          <td>{rec.weeknumber_op}</td>
                          <td>{rec.money_to_be_paid_op}</td>
                        </tr>

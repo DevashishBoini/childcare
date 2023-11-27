@@ -111,7 +111,7 @@ const TeacherMarkChildrenAttendance = () => {
              <h2>Enrolled Children</h2>
              <h2>Teacher Id: {teacherId}</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
                        <th>Student Id</th>
@@ -122,14 +122,16 @@ const TeacherMarkChildrenAttendance = () => {
                    </thead>
                      {info.map((rec) => (
                     <tbody>
-                       <tr key={rec.id}>
-                         <td>{rec.id}</td>
-                         <td>{rec.first_name}</td>
-                         <td>{rec.last_name}</td>
+                       <tr key={rec.student_id_op}>
+                         <td>{rec.student_id_op}</td>
+                         <td>{rec.first_name_op}</td>
+                         <td>{rec.last_name_op}</td>
                          <td>
                           <button
+                          className="big-button"
+                          
                            onClick={() => {
-                             handleToggle(rec.id);
+                             handleToggle(rec.student_id_op);
                            }}
                           >
                            Mark

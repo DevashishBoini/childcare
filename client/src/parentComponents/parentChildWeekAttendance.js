@@ -73,7 +73,7 @@ const ParentChildWeekAttendance = () => {
              <h2>{firstName} {lastName}</h2>
              <h2>Child Id: {childId}</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
                        <th>Day</th>

@@ -191,86 +191,117 @@ const FacilityHome = () => {
            <h2>License No. : {info.license_no}</h2>
            <h2>Facility Admin Id:{facId}</h2>
            
+           <div className="Div">
+            
            <form onSubmit={(e) => handleDate(e)}>
 
+<h3>
+ Set Today's Date :
+</h3>
+
+
+
+<div class="form-row">
+
+<div class="form-control">
+     
+     Day:
+     <select
+       value={day}
+       onChange={(e) => setday(e.target.value)}
+       className="select"
+     > 
+
+      
+       <option value="" disabled selected>Choose day</option>
+       {dropdownOptions.map((option) => (
+       <option key={option.value} value={option.value}>
+       {option.label}
+        </option>
+       ))}
+     </select>
+ </div>
+
+ <div class="form-control">
+   Week :
+     <input
+       type="number"
+       required
+       value={week}
+       onChange={(e) => setweek(e.target.value)}
+       placeholder="Week"
+     />
+</div>
+
+<div class="form-control">
+ Year :
+     <input
+       type="number"
+       required
+       value={year}
+       onChange={(e) => setyear(e.target.value)}
+       placeholder="Year"
+     />
+</div>
+
+</div>
+
+
+
+ <button >Submit</button>
+ </form>
+
+
+<div className="buttons-container">
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityChildrenEnrollments`}>
+<button className="big-button">Children Enrollments</button>
+</Link>
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityAddParent`}>
+<button className="big-button">Add Parent</button>
+</Link>
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityHireStaff`}>
+<button className="big-button">Hire Staff</button>
+</Link>
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityAssign`}>
+<button className="big-button">Staff assignment</button>
+</Link>
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityManageAttendance`}>
+<button className="big-button">Daily attendance</button>
+</Link>
+</div>
+
+
+
+<button
+onClick={() => {
+ updateLedger(info.license_no,attainweek,attainyear);
+}}
+> 
+Update Ledger
+</button>
+            
+           </div>
            
+           
+           <div className="Div">
 
-           <div>
-                <select
-                  value={day}
-                  onChange={(e) => setday(e.target.value)}
-                  className="select"
-                >
-                  <option value="" disabled selected>Choose day</option>
-                  {dropdownOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                  {option.label}
-                   </option>
-                  ))}
-                </select>
-            </div>
+           <form >
+            
+            <h3>
+            Pending Payments :
+            </h3>
+           
+            
+            <div className="form-row">
+            
+             <div class="form-control">
 
-            <div>
-                <input
-                  type="number"
-                  required
-                  value={week}
-                  onChange={(e) => setweek(e.target.value)}
-                  placeholder="Week"
-                />
-           </div>
-
-           <div>
-                <input
-                  type="number"
-                  required
-                  value={year}
-                  onChange={(e) => setyear(e.target.value)}
-                  placeholder="Year"
-                />
-           </div>
-
-            <button >Submit</button>
-            </form>
-
-           <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityChildrenEnrollments`}>
-           <button>Children Enrollments</button>
-           </Link>
-
-           <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityAddParent`}>
-           <button>Add Parent</button>
-           </Link>
-
-           <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityHireStaff`}> 
-           <button>Hire Staff</button>
-           </Link>
-
-          <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityAssign`}> 
-          <button>Staff assignment</button>
-          </Link>
-
-          <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityManageAttendance`}>
-          <button>Daily attendance</button>
-          </Link>
-          
-
-          <button
-           onClick={() => {
-            updateLedger(info.license_no,attainweek,attainyear);
-          }}
-          > 
-          Update Ledger
-          </button>
-
-          <div>
-            {attainweek}
-          </div>
-          
-          <form>
-
-           Pending Payments :
-
-            <div>
+              Week :
                 <input
                   type="number"
                   required
@@ -280,7 +311,9 @@ const FacilityHome = () => {
                 />
            </div>
 
-           <div>
+           <div class="form-control">
+              
+              Year :
                 <input
                   type="number"
                   required
@@ -289,91 +322,120 @@ const FacilityHome = () => {
                   placeholder="Year"
                 />
            </div>
+
+            </div>
+
+            
             
 
             <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/facilityPendingPayments/${pendingweek}/${pendingyear}`}>
-            <button >Submit</button>
+            <button >View ledger</button>
             </Link>
             
 
             </form>
           
-          <button>Reports</button>
+
+           </div>
+           
+          
 
           <form>
 
+<h3>
 Fetch reports :
+</h3>
 
-<div>
-                <select
-                  value={getday}
-                  onChange={(e) => setgetday(e.target.value)}
-                  className="select"
-                >
-                  <option value="" disabled selected>Choose day</option>
-                  {dropdownOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                  {option.label}
-                   </option>
-                  ))}
-                </select>
-            </div>
- 
 
+<div className="form-row">
  
- <div>
-     <input
-       type="number"
-       required
-       value={getweek}
-       onChange={(e) => setgetweek(e.target.value)}
-       placeholder="Week"
-     />
+<div class="form-control">
+
+Day :
+              <select
+                value={getday}
+                onChange={(e) => setgetday(e.target.value)}
+                className="select"
+              >
+                <option value="" disabled selected>Day</option>
+                {dropdownOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                {option.label}
+                 </option>
+                ))}
+              </select>
+          </div>
+
+
+
+<div class="form-control">
+
+Week :
+
+   <input
+     type="number"
+     required
+     value={getweek}
+     onChange={(e) => setgetweek(e.target.value)}
+     placeholder="Week"
+   />
 </div>
 
-<div>
-     <input
-       type="number"
-       required
-       value={getyear}
-       onChange={(e) => setgetyear(e.target.value)}
-       placeholder="Year"
-     />
+<div class="form-control">
+Year :
+
+   <input
+     type="number"
+     required
+     value={getyear}
+     onChange={(e) => setgetyear(e.target.value)}
+     placeholder="Year"
+   />
 </div>
 
-<div>
-                <select
-                  value={getclasstype}
-                  onChange={(e) => setgetclasstype(e.target.value)}
-                  className="select"
-                >
-                  <option value="" disabled selected>Choose Classtype</option>
-                  {dropdownOptions1.map((option) => (
-                  <option key={option.value} value={option.value}>
-                  {option.label}
-                   </option>
-                  ))}
-                </select>
-                </div>
+<div class="form-control">
 
-
+Class Type :
+              <select
+                value={getclasstype}
+                onChange={(e) => setgetclasstype(e.target.value)}
+                className="select"
+              >
+                <option value="" disabled selected>Classtype</option>
+                {dropdownOptions1.map((option) => (
+                <option key={option.value} value={option.value}>
+                {option.label}
+                 </option>
+                ))}
+              </select>
+              </div>
+</div>
  
 
- <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/DailyAttendance/${getday}/${getweek}/${getyear}/${getclasstype}`}>
- <button >Daily Attendance</button>
+
+
+<div className="buttons-container">
+
+<Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/DailyAttendance/${getday}/${getweek}/${getyear}/${getclasstype}`}>
+ <button className="big-button">Daily Attendance</button>
  </Link>
 
  <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/DailyAbsence/${getday}/${getweek}/${getyear}/${getclasstype}`}>
- <button >Daily Absence</button>
+ <button className="big-button">Daily Absence</button>
  </Link>
 
  <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/MoneyEarned/${getweek}/${getyear}`}>
- <button >Money Earned</button>
+ <button className="big-button">Money Earned</button>
  </Link>
 
  <Link to={`/facilityHome/facId/${facId}/${info.license_no}/${info.name}/MoneyBilled/${getweek}/${getyear}`}>
- <button >Money Billed</button>
+ <button className="big-button">Money Billed</button>
  </Link>
+
+</div>
+ 
+
+ 
  
 
  </form>

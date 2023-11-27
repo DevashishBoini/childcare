@@ -75,6 +75,7 @@ const FacilityAddChild = () => {
 
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
+                First Name :  
                 <input
                   type="text"
                   required
@@ -85,6 +86,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                  Last Name :
                 <input
                   type="text"
                   required
@@ -95,6 +97,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                  Address :
                 <input
                   type="text"
                   required
@@ -106,6 +109,7 @@ const FacilityAddChild = () => {
 
 
                 <div>
+                  Date of Birth :
                 <input
                   type="date"
                   required
@@ -116,6 +120,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                  Phone No :
                 <input
                   type="text"
                   value={phone}
@@ -126,6 +131,7 @@ const FacilityAddChild = () => {
                 
 
                 <div>
+                  Mail Id :
                 <input
                   type="text"
                   required
@@ -136,6 +142,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                  Hourly Salary :
                 <input
                   type="number"
                   required
@@ -146,6 +153,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                  Password :
                 <input
                   type="text"
                   required

@@ -22,11 +22,14 @@ const Navbar = () =>{
 
     return(
         <nav>
-            <div>
-                <a>CMS</a>
+            <div className="navbar-container">
+                <div className="left">
+                <h1>CMS</h1>
+                </div>
                 <ul className="right">
-                    {/* <li><Link to="/">Home</Link></li> */}
-                    <button onClick={handleclick} >Logout</button>
+                    <button
+                    className="big-button" 
+                    onClick={handleclick} >Logout</button>
                 </ul>
             </div>
         </nav>

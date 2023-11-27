@@ -124,11 +124,28 @@ const ParentChildHome = () => {
     <h1>Child Home</h1>
     <h2>{firstName} {lastName}</h2>
     <h2>Child Id : {childId}</h2>
+  
+
+     <div>
+     <button 
+    onClick = {() =>{
+     handleDelete(childId);
+    }}
+    >Drop Child</button>
+     </div>
+    
+     <div>
+      <h3>To make Payments, please visit corresponding Facility Admin.</h3>
+    </div>
+
+
 
     <form onSubmit={(e) => updateAllergy(e)}>
+  
 
     <div>
-    Update Allergies:
+    
+    <h3>Update Allergies:</h3>
 
     <input
     type="text"
@@ -144,21 +161,14 @@ const ParentChildHome = () => {
 
     </form>
 
-
-    <button 
-    onClick = {() =>{
-     handleDelete(childId);
-    }}
-    >Drop Child</button>
-
-    
-
-
     <form>
       
-      View Weekly Attendance:
+      <h3>View Weekly Attendance:</h3>
 
-      <div>
+
+      <div className="form-row">
+      
+      <div class="form-control">
       Week Number:
 
       <input
@@ -171,7 +181,7 @@ const ParentChildHome = () => {
 
       </div>
 
-      <div>
+      <div class="form-control">
       Year:
 
       <input
@@ -184,16 +194,20 @@ const ParentChildHome = () => {
 
       </div>
 
+      </div>
+
       <Link to={`/parentHome/parentId/${parentId}/viewChild/${childId}/${firstName}/${lastName}/weekAttendance/${attainweek}/${attainyear}`}>
       <button>Submit</button>
       </Link>
+
+      
+
+      
       
     
     </form>
 
-    <div>
-      To make Payments, please visit corresponding Facility Admin
-    </div>
+    
 
     <div>
 

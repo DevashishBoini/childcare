@@ -82,7 +82,7 @@ const FacilityHireStaff = () => {
          <h2>Hired Staff in {facName}</h2>
          <h2>Facility Id: {facId}</h2>
            <div>
-              <table>
+              <table className="student-table">
                <thead>
                <tr>
                    <th>Staff Id</th>
@@ -102,6 +102,8 @@ const FacilityHireStaff = () => {
                       onClick={() => {
                         handleDelete(rec.id);
                       }}
+
+                      className="big-button"
                       >
                        UnEnroll
                       </button> 

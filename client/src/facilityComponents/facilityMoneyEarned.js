@@ -66,7 +66,7 @@ const FacilityMoneyEarned = () => {
             info &&
             <>
               <h2>Week: {week} Year:{year}</h2>
-              <h2>Money Earned in {facName} : {info.money_billed}</h2>
+              <h2>Money Earned in {facName} : {info.money_earned}</h2>
               
                  
 

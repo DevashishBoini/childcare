@@ -11,3 +11,538 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Form styles */
+form {
+  margin-top: 20px;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+}
+
+/* Loading and error message styles */
+.loading,
+.error {
+  font-size: 16px;
+  color: #f00;
+  margin-top: 10px;
+}
+
+/* Additional styles can be added as needed */
+.content-w3ls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as needed */
+  background: url('./images/login1.png') no-repeat center center;
+  background-size: cover;
+}
+
+.content-bottom {
+  width: 400px; /* Adjust the width as needed */
+  padding: 40px;
+  background: transparent; /* Adjust the background as needed */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #00000050;
+}
+
+.text-center {
+  text-align: center;
+  font-size: 60px; /* Adjust the font-size as needed */
+  font-family: "Garamond", Times, serif;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+option{
+  background: black;
+  color: whitesmoke;
+  text-align: center;
+}
+.field-login {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field-login input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 35px;
+  background-color: #ff0000; /* Adjust the background color as needed */
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #e60000; /* Adjust the hover state color as needed */
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .content-bottom {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
+/* FacilityHome.css */
+
+/* Add styles for the main container */
+div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Add styles for headings */
+
+/* Add styles for form elements */
+form {
+  margin-bottom: 20px;
+}
+
+select, input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Add styles for links */
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+/* Style buttons inside links */
+a button {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Add styles for loading message */
+.loading {
+  font-size: 18px;
+  color: #888;
+}
+
+/* Add styles for error message */
+.error {
+  color: #FF6347;
+}
+
+/* Add styles for the container of buttons at the end */
+.buttons-container {
+  margin-top: 20px;
+}
+
+/* FacilityHome.css */
+
+/* FacilityHome.css */
+
+/* Add styles for headings */
+h1 {
+  color: #333;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  font-family: 'Arial Black', 'Gadget', sans-serif; /* Arial Black for bold and impactful headings */
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #0056b3;
+  font-size: 2.0em;
+  margin-bottom: 15px;
+  font-family: 'Verdana', sans-serif; /* Verdana for clear and readable subheadings */
+  text-transform: uppercase;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+h3 {
+  color: #030405; /* A softer, darker gray for subtlety */
+  font-size: 1.5em; /* Large enough to stand out, but smaller than h1 and h2 */
+  margin-bottom: 10px; /* Consistent spacing with other headings */
+  font-family: 'Verdana', sans-serif; /* A clean, versatile font for readability */
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+  letter-spacing: 1px; /* Slightly spaced for readability */
+  font-weight: bold; /* Bold but not as heavy as h1 or h2 */
+}
+
+
+/* ... (other styles remain unchanged) */
+
+
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Heading styling */
+
+input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Link styling */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Error and loading message styling */
+.error, .loading {
+  color: red;
+  font-style: italic;
+}
+
+/* Specific class styling */
+.select {
+  display: block;
+  width: 100%;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Form styling with peach background */
+form {
+  background-color: #ffdab9; /* Peach color */
+  color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Optional: Adds rounded corners to the form */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for depth */
+}
+
+.login {
+  background: transparent;
+  color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Optional: Adds rounded corners to the form */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for depth */
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ... other styles ... */
+
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Button styling with decreased width */
+button {
+  width: 50%; /* Decreased width */
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px auto; /* Center the button */
+  display: block; /* To enable margin auto to work */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; /* Align text in the center of the button */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* ... other styles ... */
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Form styling with flexbox */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  flex-basis: 48%; /* Adjusts the width of each input/select to be roughly half of the container */
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ... other styles ... */
+
+
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Button styling with decreased width */
+button {
+  width: 30%; /* Decreased width */
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px; /* Keeping the original padding for height */
+  margin: 8px auto;
+  display: block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* ... other styles ... */
+
+/* FacilityHome.css */
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Styling for buttons-container to arrange buttons in parallel */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+  justify-content: space-around; /* Evenly spaces the buttons with space around them */
+  align-items: center; /* Aligns buttons vertically */
+  margin-bottom: 20px; /* Space below the container */
+}
+
+.buttons-container a {
+  flex-basis: 20%; /* Each link (thus button) takes up 20% of the container width */
+  text-align: center; /* Centers the text (button) within the link */
+  margin: 5px; /* Adds some space around each button */
+}
+
+/* FacilityHome.css */
+
+/* ... other styles ... */
+
+/* Styling for buttons-container to arrange buttons in parallel */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+  justify-content: space-around; /* Evenly spaces the buttons with space around them */
+  align-items: center; /* Aligns buttons vertically */
+  margin-bottom: 20px; /* Space below the container */
+}
+
+.buttons-container a {
+  flex-basis: 20%; /* Each link (thus button) takes up 20% of the container width */
+  text-align: center; /* Centers the text (button) within the link */
+  margin: 5px; /* Adds some space around each button */
+}
+
+.big-button {
+  width: 100%; /* Makes the button fill the link element */
+  /* ... other button styles ... */
+}
+
+.Div {
+  background-color: #ffdab9; /* Example color: Khaki */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+/* ... other styles ... */
+
+
+/* ... other styles ... */
+
+/* Existing CSS ... */
+
+/* Enhancements for Student Table */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.student-table th, .student-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.student-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.student-table tbody {
+  background-color: #eff0c1; /* Body background color - choose a light color for readability */
+}
+
+/* Button and Link Enhancements */
+button, a button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16
+}
+
+
+nav {
+  background-color: rgb(248, 167, 167); /* Set your desired background color */
+  color: white; /* Set your desired text color */
+  padding: 10px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left a {
+  margin-right: 10px; /* Adjust the margin as needed */
+  color: white; /* Set your desired text color */
+  text-decoration: none;
+}
+
+.right {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

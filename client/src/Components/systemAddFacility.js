@@ -11,10 +11,14 @@ const SystemAddFacility = () => {
     const [isPending, setisPending] = useState(false);
     const [error, setError] = useState(null);
 
-    const [name, setname] = useState("");
-    const [address, setaddress] = useState("");
+    const [namei, setnamei] = useState("");
+    const [addressi, setaddressi] = useState("");
+    const [contacti, setcontacti] = useState("");
+    const [lici, setlici] = useState("");
+    const [gmail, setgmail] = useState("");
+    const [namee, setnamee] = useState("");
     const [contact, setcontact] = useState("");
-    const [licenseNo, setlicenseNo] = useState("");
+    const [pass, setpass] = useState("");
 
     const history = useHistory();
     
@@ -24,7 +28,7 @@ const SystemAddFacility = () => {
         e.preventDefault();
 
 
-        const newFacility = {name,address,contact,licenseNo}
+        const newFacility = {namei,addressi,contacti,lici,gmail,namee,contact,pass}
     
         setisPending(true);
         setError(null);
@@ -71,38 +75,38 @@ const SystemAddFacility = () => {
             <form onSubmit={(e) => handleSubmit(e)}>
                 
                 
-                Name:
+                Facility Name:
                 <div>
                 <input
                   type="text"
                   required
-                  value={name}
-                  onChange={(e) => setname(e.target.value)}
-                  placeholder="Name"
+                  value={namei}
+                  onChange={(e) => setnamei(e.target.value)}
+                  placeholder="Facility Name"
                 />  
                 </div>
 
                 
-                Contact:
+                Facility Contact:
                 <div>
                 <input
                   type="text"
                   required
-                  value={contact}
-                  onChange={(e) => setcontact(e.target.value)}
-                  placeholder="Contact"
+                  value={contacti}
+                  onChange={(e) => setcontacti(e.target.value)}
+                  placeholder="Facility Contact"
                 />
                 </div>
                 
 
-                Address:
+                Facility Address:
                 <div>
                 <input
                   type="text"
                   required
-                  value={address}
-                  onChange={(e) => setaddress(e.target.value)}
-                  placeholder="Address"
+                  value={addressi}
+                  onChange={(e) => setaddressi(e.target.value)}
+                  placeholder="Facility Address"
                 />
                 </div>
 
@@ -111,9 +115,53 @@ const SystemAddFacility = () => {
                 <input
                   type="text"
                   required
-                  value={licenseNo}
-                  onChange={(e) => setlicenseNo(e.target.value)}
+                  value={lici}
+                  onChange={(e) => setlici(e.target.value)}
                   placeholder="License Number"
+                />
+                </div>
+
+                Admin Email:
+                <div>
+                <input
+                  type="text"
+                  required
+                  value={gmail}
+                  onChange={(e) => setgmail(e.target.value)}
+                  placeholder="Admin Email"
+                />
+                </div>
+
+                Admin Name:
+                <div>
+                <input
+                  type="text"
+                  required
+                  value={namee}
+                  onChange={(e) => setnamee(e.target.value)}
+                  placeholder="Admin Name"
+                />
+                </div>
+
+                Admin Contact:
+                <div>
+                <input
+                  type="text"
+                  required
+                  value={contact}
+                  onChange={(e) => setcontact(e.target.value)}
+                  placeholder="Admin Contact"
+                />
+                </div>
+
+                Admin Password:
+                <div>
+                <input
+                  type="password"
+                  required
+                  value={pass}
+                  onChange={(e) => setpass(e.target.value)}
+                  placeholder="Admin Password"
                 />
                 </div>
                 

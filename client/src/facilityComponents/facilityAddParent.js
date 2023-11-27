@@ -72,7 +72,10 @@ const FacilityAddChild = () => {
             <h2>Add Parent Details</h2>
 
             <form onSubmit={(e) => handleSubmit(e)}>
+                
+                
                 <div>
+                Name :
                 <input
                   type="text"
                   required
@@ -81,8 +84,10 @@ const FacilityAddChild = () => {
                   placeholder="Name"
                 />  
                 </div>
-
+                
+                
                 <div>
+                Contact No :
                 <input
                   type="text"
                   required
@@ -93,6 +98,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                Address :
                 <input
                   type="text"
                   required
@@ -104,6 +110,7 @@ const FacilityAddChild = () => {
 
 
                 <div>
+                Mail Id :
                 <input
                   type="mail"
                   required
@@ -114,6 +121,7 @@ const FacilityAddChild = () => {
                 </div>
 
                 <div>
+                Password :
                 <input
                   type="password"
                   value={password}

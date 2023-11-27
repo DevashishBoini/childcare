@@ -176,14 +176,15 @@ const FacilityAddChild = () => {
                 <div>
                 <label >
                   <input 
-                  type="checkbox" 
+                  type="checkbox"
+                  required 
                   checked={consent}
                   onChange={(e) => setconsent(e.target.checked)}
                 />    
                 </label>    
                 </div>
              
-            {!isPending &&consent&& <button >Submit</button>}
+            {!isPending && <button >Submit</button>}
             {error && <div> {error} </div>}
             {isPending && <button disabled>Submitting</button>}
 

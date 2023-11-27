@@ -80,10 +80,13 @@ const TeacherHome = () => {
     <h2>Teacher Id : {teacherId}</h2>
 
     <form>
-
-    <div>
-    Weekly Attendance and Payroll:
     
+    <h3>Weekly Attendance and Payroll:</h3>
+
+    
+    <div class="form-row">
+     
+    <div class="form-control">
     Week Number:
     <input
     type="text"
@@ -92,6 +95,10 @@ const TeacherHome = () => {
     onChange={(e) => setattainweek(e.target.value)}
     placeholder="Week Number"
     />  
+
+    </div>
+
+    <div class="form-control">
     
     Year:
     <input
@@ -103,6 +110,10 @@ const TeacherHome = () => {
     />
 
     </div>
+  
+    </div>
+    
+
 
     
      

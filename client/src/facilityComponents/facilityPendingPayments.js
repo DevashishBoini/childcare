@@ -123,13 +123,13 @@ const FacilityPendingPayments = () => {
              <h2>Pending Payments in {facName}</h2>
              <h2>Facility Admin Id: {facId}</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
                        <th>Student Id</th>
                        <th>First Name</th>
                        <th>Last Name</th>
-                       <th>Pay</th>
+                       <th>Settle payment</th>
                     </tr>
                    </thead>
                      {info.map((rec) => (
@@ -140,8 +140,10 @@ const FacilityPendingPayments = () => {
                          <td>{rec.last_name_op}</td>
                          <td>
                           <button
+
+                           className="big-button"
                            onClick={() => {
-                             handlePay(rec.id);
+                             handlePay(rec.student_id_op);
                            }}
                           >
                            Settle Up
