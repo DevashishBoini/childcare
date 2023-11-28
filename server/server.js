@@ -77,6 +77,7 @@ app.get('/login/:role/:id', async (req, res) => {
       const result = await client
         .query("SELECT get_password($1,$2)",[id,role])
       console.log(result.rows[0].get_password)
+      console.log('sfddfs')
       res.json(result.rows[0])
     } catch (err_1) {
       console.log("fsdad")
