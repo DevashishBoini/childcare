@@ -55,10 +55,11 @@ app.post('/facId/:facId/updateDate', async (req, res) => {
     try {
       const result=await client
       .query("select * from add_today($1,$2,$3)",[day,week,year])
+      console.log("fsdsd")
       console.log(result.rows[0])
       res.status(201).send("done");
     } catch (err_1) {
-      client.release()
+      console.log("fsdsd")
       console.log(err_1.stack)
     }
   })  
