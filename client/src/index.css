@@ -539,10 +539,26 @@ nav {
   margin-right: 10px; /* Adjust the margin as needed */
   color: white; /* Set your desired text color */
   text-decoration: none;
+  /* Add hover effect for better user experience */
+  transition: color 0.3s ease;
+}
+
+.left a:hover {
+  color: #ddd; /* Lighter color on hover */
 }
 
 .right {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex; /* Align items in a row */
+}
+
+.right li {
+  margin-left: 10px; /* Space between menu items */
+}
+
+/* Add hover effect to items in the right section */
+.right li:hover {
+  color: #ddd; /* Lighter color on hover */
 }

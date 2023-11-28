@@ -49,12 +49,12 @@ app.post('/facId/:facId/updateDate', async (req, res) => {
   
   const {day,week,year}=req.body
 
-  console.log(day)
+  console.log(week)
 
   await pool.connect().then(async (client) => {
     try {
       const result=await client
-      .query("select * from add_today($1,$2,$3)",[day,year,week])
+      .query("select * from add_today($1,$2,$3)",[day,week,year])
       console.log(result.rows[0])
       res.status(201).send("done");
     } catch (err_1) {
@@ -295,7 +295,7 @@ app.get('/facId/:facId/:licNo/studentList', async (req, res) => {
       const result = await client
         .query("select * from find_student($1) ;",[licNo])
       client.release()
-      console.log(result.rows[0].first_name)
+      console.log(result.rows[0])
       res.json(result.rows)
     } catch (err_1) {
       console.log(err_1.stack)
@@ -315,6 +315,8 @@ app.post('/facId/:facId/:licNo/:classtype/addChild', async (req, res) => {
   let consent_form=0;
   
   if(consent===true) consent_form=1;
+
+  console.log(classtype)
 
   await pool.connect().then(async (client) => {
     try {
@@ -356,11 +358,9 @@ app.get('/facId/:facId/:licNo/staffList', async (req, res) => {
     try {
       const result = await client
         .query("select * from find_staff($1) ;",[licNo])
-      client.release()
-      console.log(result.rows[0].first_name)
+      console.log(result.rows[0])
       res.json(result.rows)
     } catch (err_1) {
-      client.release()
       console.log(err_1.stack)
     }
   })
@@ -407,12 +407,15 @@ app.post('/facId/:facId/:teacherId/assignClass', async (req, res) => {
 
   const {teacherId,classtype,licNo}=req.body
 
+  
+  console.log(classtype)
 
   await pool.connect().then(async (client) => {
     try {
       const result=await client
       .query("select * from assign_teacher($1,$2,$3)",[teacherId,classtype,licNo])
-      console.log(result.rows[0].assign_teacher)
+      console.log(result.rows[0])
+      console.log("fsd")
       res.status(201).send("done");
     } catch (err_1) {
       client.release()
@@ -449,7 +452,8 @@ app.post('/facId/:facId/:licNo/teacherAttendance', async (req, res) => {
 
   const type="teacher"
 
-  console.log(type)
+  console.log(teacherId)
+  console.log(time)
   
   await pool.connect().then(async (client) => {
     try {
@@ -534,6 +538,7 @@ app.get('/teacherId/:teacherId/teacherAttendance/:weekNo/:yearNo/totalSalary', a
         .query("select * from cal_money_per_week($1,$2,$3) as a;",[teacherId,weekNo,yearNo])
       client.release()
       console.log(result.rows[0].a)
+      
       res.json(result.rows[0].a)
     } catch (err_1) {
       client.release()
@@ -549,6 +554,8 @@ app.get('/teacherId/:teacherId/markChildrenAttendance/:day/:week/:year', async (
   const day=req.params.day
   const year=req.params.year
 
+  console.log(week)
+  
   
 
   await pool.connect().then(async (client) => {
@@ -557,12 +564,43 @@ app.get('/teacherId/:teacherId/markChildrenAttendance/:day/:week/:year', async (
         .query("select * from unmarked_students($1,$2,$3,$4) as A;",[teacherId,day,week,year])
       client.release()
       console.log(result.rows)
+      console.log("asdf")
       res.json(result.rows)
     } catch (err_1) {
       client.release()
       console.log(err_1.stack)
     }
   })
+});
+
+app.put('/teacherId/:teacherId/markChildrenAttendance/:day/:week/:year/:studentId', async (req, res) => {
+  
+  const teacherId=req.params.teacherId
+  const week=req.params.week
+  const day=req.params.day
+  const year=req.params.year
+  const time=0
+
+  const studentId=req.params.studentId
+
+
+  const type="student"
+
+  console.log(teacherId)
+  console.log("sdfa")
+  
+  await pool.connect().then(async (client) => {
+    try {
+      const result=await client
+      .query("select * from mark_attendance($1,$2,$3,$4,$5,$6)",[studentId,type,year,week,day,time])
+      console.log(result.rows[0])
+      res.status(201).send("done");
+    } catch (err_1) {
+      client.release()
+      console.log(err_1.stack)
+    }
+  })  
+    
 });
 
 app.get('/parentId/:parentId/childrenList', async (req, res) => {

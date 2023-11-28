@@ -23,6 +23,7 @@ const FacilityAddChild = () => {
     
   
     const dropdownOptions = [
+      { label: 'Choose Classtype', value: 0 },
       { label: 'Infant', value: 1 },
       { label: 'Toddler', value: 2 },
       { label: 'Twadler', value: 3 },
@@ -150,7 +151,6 @@ const FacilityAddChild = () => {
                   onChange={(e) => setclasstype(e.target.value)}
                   className="select"
                 >
-                  <option value="" disabled selected>Choose Classtype</option>
                   {dropdownOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                   {option.label}

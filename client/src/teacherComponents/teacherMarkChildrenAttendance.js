@@ -109,6 +109,7 @@ const TeacherMarkChildrenAttendance = () => {
            info &&
            <>
              <h2>Enrolled Children</h2>
+             <h2>Today's Unmarked Children</h2>
              <h2>Teacher Id: {teacherId}</h2>
                <div>
                   <table className="student-table">

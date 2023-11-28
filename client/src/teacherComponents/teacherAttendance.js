@@ -106,7 +106,7 @@ const TeacherAttendance = () => {
              <h2>Weekly Attendance and Payroll of Week :{weekNo}</h2>
              <h2>Teacher Id: {teacherId}</h2>
                <div>
-                  <table>
+                  <table className="student-table">
                    <thead>
                    <tr>
                        <th>Day</th>
@@ -115,7 +115,6 @@ const TeacherAttendance = () => {
                        <th>Out Time</th>
                        <th>Hours Worked</th>
                        <th>Salary Earned</th>
-                       <th> </th>
                     </tr>
                    </thead>
                      {info.map((rec) => (

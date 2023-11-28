@@ -17,6 +17,7 @@ const FacilityAssign = () => {
     
 
     const dropdownOptions = [
+        { label: 'Choose ClassType', value: 0 },
         { label: 'Infant', value: 1 },
         { label: 'Toddler', value: 2 },
         { label: 'Twadler', value: 3 },
@@ -48,6 +49,8 @@ const FacilityAssign = () => {
           })
           .then((resp) => {
             console.log("New Child Added");
+            alert("Staff Assigned");
+            window.location.reload();
             setisPending(false);
           })
           .catch((error) => {
@@ -92,7 +95,6 @@ const FacilityAssign = () => {
                   onChange={(e) => setclasstype(e.target.value)}
                   className="select"
                 >
-                  <option value="" disabled selected>Choose Classtype</option>
                   {dropdownOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                   {option.label}
