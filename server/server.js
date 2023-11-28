@@ -76,11 +76,10 @@ app.get('/login/:role/:id', async (req, res) => {
     try {
       const result = await client
         .query("SELECT get_password($1,$2)",[id,role])
-      client.release()
       console.log(result.rows[0].get_password)
       res.json(result.rows[0])
     } catch (err_1) {
-      client.release()
+      console.log("fsdad")
       console.log(err_1.stack)
     }
   })
