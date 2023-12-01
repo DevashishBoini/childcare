@@ -47,7 +47,7 @@ const FacilityAddChild = () => {
             return resp;
           })
           .then((resp) => {
-            console.log("New Child Added");
+            console.log("New Staff Added");
             setisPending(false);
             alert("New Staff Added")
             //history.go(-1);
@@ -155,7 +155,7 @@ const FacilityAddChild = () => {
                 <div>
                   Password :
                 <input
-                  type="text"
+                  type="password"
                   required
                   value={password}
                   onChange={(e) => setpassword(e.target.value)}

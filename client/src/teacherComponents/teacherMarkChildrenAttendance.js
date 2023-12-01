@@ -39,6 +39,7 @@ const TeacherMarkChildrenAttendance = () => {
           .then((resp) => {
             console.log("Status Updated");
             setisPending(false);
+            alert(`Student Id: ${studentId} Attendance Marked.`)
             //history.go(-1);
             window.location.reload();
           })

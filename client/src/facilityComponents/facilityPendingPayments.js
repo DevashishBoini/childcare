@@ -32,7 +32,7 @@ const FacilityPendingPayments = () => {
                 if (!resp.ok) {
                   throw new Error("error occured during the post request");
                 }
-
+                alert(`Student Id: ${studId} Payment Settled Up.`)
                 window.location.reload();
                 return resp;
               })

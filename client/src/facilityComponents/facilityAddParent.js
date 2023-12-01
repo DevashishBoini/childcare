@@ -48,6 +48,7 @@ const FacilityAddChild = () => {
           .then((resp) => {
             console.log("New Parent Added");
             setisPending(false);
+            alert("New Parent Added")
             //history.go(-1);
             history.push(`/facilityHome/facId/${facId}`);
           })

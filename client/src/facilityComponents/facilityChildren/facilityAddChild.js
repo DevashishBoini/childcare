@@ -59,6 +59,7 @@ const FacilityAddChild = () => {
           .then((resp) => {
             console.log("New Child Added");
             setisPending(false);
+            alert("New Child Added")
             //history.go(-1);
             history.push(`/facilityHome/facId/${facId}/${licNo}/${facName}/facilityChildrenEnrollments`);
           })
